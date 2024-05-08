@@ -6,6 +6,5 @@
   :dependencies [[org.clojure/clojure "1.11.1"]
                  [org.clojure/tools.namespace "0.2.11"]
                  [org.clojure/tools.trace "0.7.9"]]
-  :repl-options {:init-ns xo-server.core}
   :profiles {:dev {:source-paths ["startup"]}}
   :target-path "target/%s")
