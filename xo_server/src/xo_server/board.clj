@@ -2,7 +2,7 @@
   (:require [clojure.set :as set]
             [xo-server.core :as core]))
 
-(defn empty-board {:X #{}, :O #{}})
+(def empty-board {:X #{}, :O #{}})
 
 (defn token-at
   [board position]
@@ -10,7 +10,7 @@
     (first (keys (core/get-map-with-value-in-set board position)))
     position))
 
-(defn add-new
+(defn add-move
   [board move player]
   (update board player conj move))
 
