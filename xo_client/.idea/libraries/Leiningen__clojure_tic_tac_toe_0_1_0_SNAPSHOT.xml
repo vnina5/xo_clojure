@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Leiningen: clojure-tic-tac-toe:0.1.0-SNAPSHOT">
-    <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/clojure-tic-tac-toe/clojure-tic-tac-toe/0.1.0-SNAPSHOT/clojure-tic-tac-toe-0.1.0-SNAPSHOT.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
