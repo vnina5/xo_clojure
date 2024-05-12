@@ -53,6 +53,16 @@
     (= game-mode :computer)
       {:X player_move/make-player-move, :O computer_move/make-computer-move}))
 
+(defn decide-strategies-2
+  [game-mode move-order]
+  (cond
+    (= game-mode :player)
+     {:X player_move/make-player-move, :O player_move/make-player-move}
+    (and (= game-mode :computer) (= move-order :1))
+      {:X player_move/make-player-move, :O computer_move/make-computer-move}
+    (and (= game-mode :computer) (= move-order :2))
+      {:X computer_move/make-computer-move, :O player_move/make-player-move}))
+
 
 (defn get-create-view
   []

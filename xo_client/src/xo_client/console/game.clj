@@ -30,7 +30,8 @@
         starting-player (get-starting-player game-mode move-order)]
     { :side-length side-length
       :game-mode game-mode
-      :starting-player starting-player }))
+      :move-order move-order
+      :starting-player :X }))
 
 
 (defn- create-initial-data
@@ -38,6 +39,15 @@
   (let [valid-moves (game_setup/get-valid-moves side-length)
         winning-moves (game_setup/get-winning-moves side-length)
         move-strategies (game_setup/decide-strategies game-mode)
+        create-view (game_setup/get-create-view)
+        initial-data (game_handler/create-initial-data valid-moves winning-moves move-strategies create-view)]
+    initial-data))
+
+(defn- create-initial-data-2
+  [{:keys [side-length game-mode move-order]}]
+  (let [valid-moves (game_setup/get-valid-moves side-length)
+        winning-moves (game_setup/get-winning-moves side-length)
+        move-strategies (game_setup/decide-strategies-2 game-mode move-order)
         create-view (game_setup/get-create-view)
         initial-data (game_handler/create-initial-data valid-moves winning-moves move-strategies create-view)]
     initial-data))
@@ -80,7 +90,8 @@
 (defn play-game
   [& args]
   (let [setup-data (get-perform-setup args)
-        initial-data (create-initial-data setup-data)
+        ;initial-data (create-initial-data setup-data)
+        initial-data (create-initial-data-2 setup-data)
         starting-game-state (create-starting-game-state setup-data)
         _ (display-instructions initial-data)
         final-game-state (play-all-rounds starting-game-state initial-data)
