@@ -16,7 +16,8 @@
 
 (defn create-view
   [game-state]
-  (join-lines [(create-row game-state :1 :2 :3)
+  (join-lines [""
+               (create-row game-state :1 :2 :3)
                "-----------"
                (create-row game-state :4 :5 :6)
                "-----------"

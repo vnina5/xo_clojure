@@ -6,8 +6,9 @@
   :dependencies [[org.clojure/clojure "1.11.1"]
                  [org.clojure/tools.namespace "0.2.11"]
                  [xo_server "0.1.0-SNAPSHOT"]]
-  :repl-options {:init-ns xo-client.core}
+                 ;[clojure-tic-tac-toe "0.1.0-SNAPSHOT"]]
+  ;:repl-options {:init-ns xo-client.core}
   :profiles {:dev {:source-paths ["startup"]}
              :uberjar {:aot :all}}
   :target-path "target/%s"
-  :main ^:skip-aot xo_client.core)
+  :main ^:skip-aot xo-client.core)
