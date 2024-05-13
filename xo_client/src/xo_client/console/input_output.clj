@@ -4,8 +4,7 @@
             [xo-client.view-handler :as view]))
 
 (defn display-introduction []
-  (println "This is a XO game. Let's enjoy!\n"))
-
+  (print "This is a XO game. Let's enjoy!\n\n"))
 
 (defn- display-simple-prompt []
   (print "> "))
@@ -48,7 +47,7 @@
 (defn display-move-order-instructions []
   (println (join-lines ["\nPlease choose the move order:"
                         "- \"1\" to go first"
-                        "- \"2\" to go secon"])))
+                        "- \"2\" to go second"])))
 
 (defn- display-invalid-move-order-message
   [order]
