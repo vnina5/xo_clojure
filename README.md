@@ -13,9 +13,25 @@ Igrači naizmenično postavljaju svoje simbole (X ili O) na prazna polja table, 
 
 Iako je XO igra jednostavna, zahteva razmišljanje i strategiju kako bi se izbegle zamke protivnika i postigla pobeda. Zanimljiva je i kao tema za proučavanje algoritama veštačke inteligencije, jer pruža izazov za razvoj algoritama koji mogu donositi pametne odluke u igri.
 
+## Igranje igre
+### Pokretanje igre
+Aplikacija se pokreće tako što se pokrene klijenstki deo aplikacije (xo_client) iz terminala:
+1. Pokrenuti terminal
+2. Navigirati do foldera xo_clojure/xo_client
+3. Pokrenuti komandu `lein run`
+
 ### Moduli igre
 Nakon pokretanja aplikacije korisnik bira jedan od dva modula igre:
-  1. Igrač protiv kompjutera (algoritam koji je kreiran u sklopu aplikacije)
-  2. Igrač protiv drugog igrača. gde naizmenično unose svoje poteze.
+  1. Igrač protiv drugog igrača, gde naizmenično unose svoje poteze
+  2. Igrač protiv kompjutera (algoritam koji je kreiran u sklopu aplikacije).
 
-jdh
+#### Igrač protiv igrača
+Ako korisnik izabere prvu opciju (p), odnosno da igra protiv drugog igrača, biće mu prikazana tabela sa poljima koje je moguće odigrati. Igrač odigrava potez tako što unosi broj polja na koje želi da postavi svoj simbol. Prvi igrač postavlja X, dok drugi postavlja O. Igrači naizmenično unose poteze. Igra se završava kada jedan od igrača postavi tri simbola u nizu (horizontalno, vertikalno ili dijagonalno) i taj igrač je pobednik, ili kada se popune sva polja što znači da niko nije pobedio
+
+#### Igrač protiv kompjutera
+Ako korisnik izabere drugu opciju (c), odnosno da igra protiv kompjutera, potrebno je da izabere da li želi da bude prvi ili drugi na potezu. Ako izabere opciju 1 njegov simbol će biti X, a ako izabere opciju 2 njegov simbol će biti O. Igrač odigrava potez tako što unosi broj polja na koje želi da postavi svoj simbol. Nakon toga odigrava kompjuter itd. Igra se završava kada jedan od igrača postavi tri simbola u nizu (horizontalno, vertikalno ili dijagonalno) i taj igrač je pobednik, ili kada se popune sva polja što znači da niko nije pobedio.
+
+### Minimax algoritam
+Minimax algoritam je algoritam koji se često koristi u teoriji igara i veštačkoj inteligenciji za donošenje odluka u nulto-sumnim igrama, gde se jedan igrač trudi da maksimizuje svoju korist ili da minimizuje korist protivnjčkog igrača. Osnovna ideja Minimax algoritma je da svaki igrač, u svakom trenutku igre, procenjuje najbolji potez koji može da napravi, uzimajući u obzir poteze protivnika i očekivanu korist koju bi protivnik mogao da ostvari.
+Logika kojom se određuju potezi kompjutera implemenitra Minimax algoritam za pronalaženje optimalnog poteza. Ovim algoritmom se rekurzivno prolazi kroz stablo svih mogućih poteza da bi se došlo do najboljeg poteza.
+
