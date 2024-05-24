@@ -22,14 +22,51 @@ Aplikacija se pokreće tako što se pokrene klijenstki deo aplikacije (xo_client
 
 ### Moduli igre
 Nakon pokretanja aplikacije korisnik bira jedan od dva modula igre:
-  1. Igrač protiv drugog igrača, gde naizmenično unose svoje poteze
-  2. Igrač protiv kompjutera (algoritam koji je kreiran u sklopu aplikacije).
+  - "p" - igrač protiv drugog igrača, gde naizmenično unose svoje poteze
+  - "c" - igrač protiv kompjutera (algoritam koji je kreiran u sklopu aplikacije).
 
 #### Igrač protiv igrača
-Ako korisnik izabere prvu opciju (p), odnosno da igra protiv drugog igrača, biće mu prikazana tabela sa poljima koje je moguće odigrati. Igrač odigrava potez tako što unosi broj polja na koje želi da postavi svoj simbol. Prvi igrač postavlja X, dok drugi postavlja O. Igrači naizmenično unose poteze. Igra se završava kada jedan od igrača postavi tri simbola u nizu (horizontalno, vertikalno ili dijagonalno) i taj igrač je pobednik, ili kada se popune sva polja što znači da niko nije pobedio
+Ako korisnik izabere prvu opciju (p), odnosno da igra protiv drugog igrača, biće mu prikazana tabela sa poljima koje je moguće odigrati. Igrač odigrava potez tako što unosi broj polja na koje želi da postavi svoj simbol. Prvi igrač postavlja X, dok drugi postavlja O. Igrači naizmenično unose poteze.
+
+| **1** | **2** | **3** |
+|---|---|---|
+| **4** | **5** | **6** |
+| **7** | **8** | **9** |
 
 #### Igrač protiv kompjutera
-Ako korisnik izabere drugu opciju (c), odnosno da igra protiv kompjutera, potrebno je da izabere da li želi da bude prvi ili drugi na potezu. Ako izabere opciju 1 njegov simbol će biti X, a ako izabere opciju 2 njegov simbol će biti O. Igrač odigrava potez tako što unosi broj polja na koje želi da postavi svoj simbol. Nakon toga odigrava kompjuter itd. Igra se završava kada jedan od igrača postavi tri simbola u nizu (horizontalno, vertikalno ili dijagonalno) i taj igrač je pobednik, ili kada se popune sva polja što znači da niko nije pobedio.
+Ako korisnik izabere drugu opciju (c), odnosno da igra protiv kompjutera, potrebno je da izabere da li želi da bude prvi ili drugi na potezu:
+  - "1" - igrač igra prvi, a kompjuter drugi
+  - "2" - kompjuter igra prvi, a igrač igra drugi.
+  
+Ako izabere opciju 1 njegov simbol će biti X, a ako izabere opciju 2 njegov simbol će biti O. Igrač odigrava potez tako što unosi broj polja na koje želi da postavi svoj simbol. Nakon toga odigrava kompjuter itd. 
+
+### Kraj igre
+Igra se završava kada jedan od igrača postavi tri simbola u nizu (horizontalno, vertikalno ili dijagonalno) i taj igrač je pobednik u igri. Ako ni jedan od igrača ne postavi tri simbola u nizu a sva polja se popune igra je završena nerešeno, što znači da niko nije pobedio.
+
+Horizontalno:
+| **_X_** | **_X_** | **_X_** |
+|---|---|---|
+| **4** | **O** | **6** |
+| **7** | **8** | **O** |
+
+Vertikalno:
+| **O** | **2** | **_X_** |
+|---|---|---|
+| **4** | **O** | **_X_** |
+| **7** | **8** | **_X_** |
+
+Dijagonalno:
+| **O** | **2** | **_X_** |
+|---|---|---|
+| **4** | **_X_** | **O** |
+| **_X_** | **8** | **9** |
+
+Nerešeno:
+| **X** | **O** | **X** |
+|---|---|---|
+| **X** | **O** | **O** |
+| **O** | **X** | **X** |
+
 
 ### Minimax algoritam
 Minimax algoritam je algoritam koji se često koristi u teoriji igara i veštačkoj inteligenciji za donošenje odluka u nulto-sumnim igrama, gde se jedan igrač trudi da maksimizuje svoju korist ili da minimizuje korist protivnjčkog igrača. Osnovna ideja Minimax algoritma je da svaki igrač, u svakom trenutku igre, procenjuje najbolji potez koji može da napravi, uzimajući u obzir poteze protivnika i očekivanu korist koju bi protivnik mogao da ostvari.
